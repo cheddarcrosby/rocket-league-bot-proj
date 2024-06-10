@@ -52,8 +52,9 @@ class Bot(GoslingAgent):
             return
             
         if is_behind_ball: 
-            
             self.set_intent(find_hits(self, targets))
+            return
+        
         if len(hits['at_opponent_goal']) > 0:
             self.set_intent(hits['at_opponent_goal' ][0])
             return
@@ -71,9 +72,9 @@ class Bot(GoslingAgent):
         if self.me.supersonic and closer_to_foe:
             self.set_intent(goto(self.foes[0].location)) 
             return
+        return
         
-        if self.set_intent is None:
-            return
+
 
       
     
