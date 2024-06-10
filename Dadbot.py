@@ -72,8 +72,8 @@ class Bot(GoslingAgent):
         if self.me.supersonic and closer_to_foe:
             self.set_intent(goto(self.foes[0].location)) 
             return
-        return
-        
+        if self.set_intent is None:
+            return
 
 
       
